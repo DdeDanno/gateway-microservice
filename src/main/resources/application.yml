@@ -1,5 +1,5 @@
 server:
-  port: ${PORT:8762}
+  port: ${PORT}
 
 eureka:
   instance:
@@ -14,7 +14,7 @@ eureka:
 
 spring:
   application:
-    name: ${APP_NAME:gateway}
+    name: ${APP_NAME}
   config:
     import: optional:file:.env[.properties]
 
@@ -29,7 +29,7 @@ spring:
       globalcors:
         cors-configurations:
           '[/**]':
-            allowedOrigins: ${ALLOWED_ORIGINS:*}
+            allowedOrigins: ${ALLOWED_ORIGINS}
             allowedHeaders: "*"
             allowedMethods:
               - GET
@@ -41,7 +41,7 @@ spring:
 management:
   endpoint:
     gateway:
-      enabled: ${ROUTE_TABLES_ENABLED:true}
+      enabled: ${ROUTE_TABLES_ENABLED}
   endpoints:
     web:
       exposure:
